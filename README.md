@@ -32,6 +32,28 @@ scp DroneMavLinkTransport root@192.168.1.111:/home/pi
 scp libMavLinkCom.so root@192.168.1.111:/home/pi
 ```
 
+## How to Use
+
+First, you need to start the application. This can be done by running the following command:
+```bash
+./DroneMavLinkTransport
+```
+
+After that the program will display the current state of the flight controller (compass data). If you change the inclination of the controller, the data in the terminal will also change.
+
+![AttitudeVehicleState](./docs/images/attitude-vehicle-state.png)
+
+## Calculating Orientation
+
+ROLL, PITCH and/or YAW offsets of the flight controller are calculated relative to the vehicle around the forward (x), right (y), down (z) axes [2].
+
+![FrameHeading](./docs/images/frame-heading.png)
+
+The axes to rotate around stay the same from one rotation step to the next one. So the frame to perform the rotation in stays fixed. This is also known as extrinsic rotation. 
+
+![FrameControllerOrientation](./docs/images/fc_orientation.png)
+
 ## Extra Links 
 
 1. https://www.jetbrains.com/help/clion/remote-debug.html#debug-shared-libs
+2. https://docs.px4.io/main/en/config/flight_controller_orientation.html
