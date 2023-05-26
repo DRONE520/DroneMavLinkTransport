@@ -11,3 +11,6 @@ add_executable(DroneMavLinkTransport main.cpp)
 target_link_directories(DroneMavLinkTransport PUBLIC ${CMAKE_SOURCE_DIR}/lib)
 target_link_libraries(DroneMavLinkTransport MavLinkCom)
 
+add_executable(Transport main2.cpp)
+target_link_directories(Transport PUBLIC ${CMAKE_SOURCE_DIR}/lib)
+target_link_libraries(Transport MavLinkCom)
