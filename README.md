@@ -32,7 +32,26 @@ scp DroneMavLinkTransport root@192.168.1.111:/home/pi
 scp libMavLinkCom.so root@192.168.1.111:/home/pi
 ```
 
+## Connection types and QGroundCotrol Configuration
+
+You can use these schemes to connect all the devices together.
+
+![ConnectionTypes](./docs/images/connection-types.png)
+
+To set up QGC you will need to create a custom connection:
+
+![QGC](./docs/images/qgc.png)
+
+
 ## How to Use
+
+### Serial Cofiguration
+1. sudo apt install minicom
+2. minicom -s
+3. Serial port setup
+4. Serial Device: /dev/ttyS1 Bps/Par/Bits: 57600 8N1
+5. Exit from Minicom
+6. sudo apt purge minicom
 
 First, you need to start the application. This can be done by running the following command:
 ```bash
